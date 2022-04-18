@@ -6,13 +6,12 @@ import { SearchScreen } from "../components/search/SearchScreen"
 
 export const DashboardRoutes = () => {
    return (
-      <div>
-         <h1>DashboardRoutes</h1>
+      <div className="mt-3">
          <Routes>
             <Route exact path='marvel' element={<MarvelScreen />} />
             <Route exact path='dc' element={<DcScreen />} />
             <Route exact path='search' element={<SearchScreen />} />
-            <Route exact path='hero' element={<HeroScreen />} />
+            <Route exact path='hero/:id' element={<HeroScreen />} />
          </Routes>
       </div>
    )

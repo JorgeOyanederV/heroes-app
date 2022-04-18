@@ -8,11 +8,13 @@ export const AppRouter = () => {
    return (
       <div>
          <Navbar />
-         <Routes>
-            <Route exact path='/login' element={<LoginScreen />} />
+         <div className="container">
+            <Routes>
+               <Route exact path='/login' element={<LoginScreen />} />
+               <Route path='/*' element={<DashboardRoutes />} />
+            </Routes>
+         </div>
 
-            <Route path='/*' element={<DashboardRoutes />} />
-         </Routes>
       </div>
    )
 }
