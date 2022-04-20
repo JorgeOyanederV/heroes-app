@@ -10,7 +10,7 @@ export const PrivateRoute = ({ children }) => {
 
    useEffect(() => {
       localStorage.setItem('lastPath', pathname + search);
-   }, [pathname])
+   }, [pathname, search])
 
    return user.logged
       ?

@@ -2,10 +2,11 @@ import { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../../selectors/getHeroById";
 
+const heroesImages = require.context('../../../public/assets', true);
+
 export const HeroScreen = () => {
    const { id: heroId } = useParams();
-
-   const hero = useMemo(() => getHeroById(heroId) , [heroId]);
+   const hero = useMemo(() => getHeroById(heroId), [heroId]);
 
    const navigate = useNavigate();
 
@@ -23,12 +24,11 @@ export const HeroScreen = () => {
       first_appearance,
       characters } = hero;
 
-   const imagePath = `/assets/${id}.jpg`;
    return (
       <div className="row mt-5">
          <div className="col-4">
             <img
-               src={imagePath}
+               src={heroesImages(`./${id}.jpg`)}
                className='img-thumbnail'
                alt={superhero} />
          </div>

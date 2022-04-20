@@ -18,7 +18,6 @@ export const SearchScreen = () => {
    const handleSubmit = (event) => {
       event.preventDefault();
       navigation(`?q=${name}`);
-      // localStorage.setItem('lastPath', location.pathname + `?q=${name}`);
    }
    return (
       <div className="row">
