@@ -5,6 +5,8 @@ import { authReducer } from "../auth/authReducer"
 
 import { LoginScreen } from '../components/login/LoginScreen'
 import { DashboardRoutes } from './DashboardRoutes'
+import { PrivateRoute } from "./PrivateRoute"
+import { PublicRoute } from "./PublicRoute"
 
 // const init = () => {
 //    return {
@@ -27,8 +29,15 @@ export const AppRouter = () => {
    return (
       <AuthContext.Provider value={{ user, dispatch }}>
          <Routes>
-            <Route exact path='/login' element={<LoginScreen />} />
-            <Route path='/*' element={<DashboardRoutes />} />
+            <Route exact path='/login' element={
+               <PublicRoute>
+                  <LoginScreen />
+               </PublicRoute>
+            } />
+            <Route path='/*' element={
+               <PrivateRoute>
+                  <DashboardRoutes />
+               </PrivateRoute>} />
          </Routes>
       </AuthContext.Provider>
    )
