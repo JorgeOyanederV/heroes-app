@@ -29,6 +29,7 @@ export const AppRouter = () => {
    return (
       <AuthContext.Provider value={{ user, dispatch }}>
          <Routes>
+
             <Route exact path='/login' element={
                <PublicRoute>
                   <LoginScreen />
@@ -38,7 +39,12 @@ export const AppRouter = () => {
                <PrivateRoute>
                   <DashboardRoutes />
                </PrivateRoute>} />
+            <Route exact path="/" element={
+               <PublicRoute>
+                  <LoginScreen />
+               </PublicRoute>} />
          </Routes>
+
       </AuthContext.Provider>
    )
 }
