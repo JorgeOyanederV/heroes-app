@@ -1,5 +1,5 @@
 import queryString from 'query-string'
-import { memo, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from "../../helpers/useForm"
 import { getHeroesByName } from "../../selectors/getHeroesByName"
@@ -17,7 +17,8 @@ export const SearchScreen = () => {
 
    const handleSubmit = (event) => {
       event.preventDefault();
-      navigation(`?q=${name}`)
+      navigation(`?q=${name}`);
+      // localStorage.setItem('lastPath', location.pathname + `?q=${name}`);
    }
    return (
       <div className="row">
