@@ -39,7 +39,7 @@ export const AppRouter = () => {
                <PrivateRoute>
                   <DashboardRoutes />
                </PrivateRoute>} />
-            <Route exact path="/" element={
+            <Route exact path="" element={
                <PublicRoute>
                   <LoginScreen />
                </PublicRoute>} />
