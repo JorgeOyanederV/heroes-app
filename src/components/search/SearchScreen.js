@@ -44,6 +44,8 @@ export const SearchScreen = () => {
 
          </div>
          <div className="col-8">
+            <label>Resultados</label>
+            <hr />
             {
                heroesFiltered.map(heroe =>
                   <HeroCard {...heroe} key={heroe.id} />
